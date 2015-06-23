@@ -1,0 +1,25 @@
+@startuml
+title View Change Sequence
+
+participant SomethingView
+participant View
+participant SomethingViewGroup
+participant ViewGroup
+participant Service
+
+
+SomethingView -> View : send Change View(ViewGroup) Event or send Finish View(Group) Event
+activate SomethingView
+
+View --> SomethingViewGroup : delivery Event
+
+SomethingViewGroup -> ViewGroup : send Change View(ViewGroup) Event or send Finish View(Group) Event
+ViewGroup --> Service : delivery Event
+Service -> AnotherViewGroup : AnotherViewGroup.start()
+
+
+
+deactivate SomethingView
+
+
+@enduml

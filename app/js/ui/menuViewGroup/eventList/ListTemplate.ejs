@@ -1,0 +1,23 @@
+<ul class="bg_list">
+
+<%
+    var eventList = model.getData();
+    var max = model.getVisibleVMax();
+
+    for(var i = 0; i < max; i++) {
+        var index = i + model.getVStartIndex();
+        var imgURL = "";
+        var eventStateClassName = "";
+        if (eventList != null && eventList[index] != null) {
+            var event = eventList[index];
+            imgURL = event.getImageUrl();
+            eventStateClassName = UIHelper.getEventStateClassName(event);
+        }
+%>
+        <li class="banner unfocus">
+            <span class="img"><img src=<%= imgURL%>></span>
+            <span class="icon <%= eventStateClassName%>"></span><!-- 아이콘 당첨:win, 참여중:join, 응모완료:closed 중 택일-->
+            <span class="underline"></span>
+        </li>
+<% } %>
+</ul>

@@ -1,0 +1,118 @@
+@charset "utf-8";
+@import url('base.css');
+
+body {font-size:12px; font-family:"산세리프2"; color:#6f6f6f; line-height:15px; width:960px; height:540px; overflow:hidden;}
+input, select, textarea, table, tr, td, div, span {vertical-align:middle; font-size:12px; font-family:"산세리프2"; color:#6f6f6f;}
+a {cursor:pointer;}
+body:after {
+    content: url('../images/event_main.png') url('../images/event_popup.png');
+    display: none;
+}
+/*Main */
+#main_bg  {width:960px; height:540px; margin:0; z-index:10; background:url(../images/event_main.png) -570px 0 no-repeat;}
+#main_bg .bg_left  {width:286px; height:442px; display:inline-block; float:left; position:relative; left:0px; top:98px;  border:0px solid #FF0000; }
+#main_bg .bg_left .bg_menu_list {width:221px; height:141px; position:absolute; top:0px; left:50px; border:0px solid #33FF99;}
+#main_bg .bg_left .menu_list {display:inline-block; float:left;}
+#main_bg .bg_left .menu_list li{display:inline-block; float:left; text-align:left;}
+#main_bg .bg_left .menu_list li.menu_box {width:221px; height:43px; margin-bottom:4px;}
+#main_bg .bg_left .menu_list li.menu_box.focus {width:221px; height:43px; background-color:rgba(203,232,22,1);}
+#main_bg .bg_left .menu_list li.menu_box.focus .blit {display:inline-block;  width:2px; height:14px;}
+#main_bg .bg_left .menu_list li.menu_box.focus .menu {display:inline-block; max-width:133px; height:43px; line-height:43px; font-size:17px; color:#323d42; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.focus .icon {display:inline-block; width:46px; height:23px; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.focus .icon.hot {background:url(../images/event_main.png) -100px -530px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.focus .icon.new {background:url(../images/event_main.png) -200px -530px no-repeat;}
+
+#main_bg .bg_left .menu_list li.menu_box.unfocus {width:221px; height:43px;}
+#main_bg .bg_left .menu_list li.menu_box.unfocus .blit {display:inline-block;  width:2px; height:14px; background:url(../images/event_main.png) -540px -530px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.unfocus .menu {display:inline-block; max-width:133px; height:43px; line-height:43px; font-size:17px; color:#2e494e; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.unfocus .icon {display:inline-block;  width:46px; height:23px; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.unfocus .icon.hot {background:url(../images/event_main.png) -100px -530px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.unfocus .icon.new {background:url(../images/event_main.png) 200px -530px no-repeat;}
+
+#main_bg .bg_left .menu_list li.menu_box.select {width:221px; height:43px; }
+#main_bg .bg_left .menu_list li.menu_box.select .blit {display:inline-block;  width:2px; height:14px; background:url(../images/event_main.png) -530px -530px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.select .menu {display:inline-block; max-width:133px; height:43px; line-height:43px; font-size:17px; color:#cbe816; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.select .icon {display:inline-block; width:46px; height:23px; position:relative; left:15px;}
+#main_bg .bg_left .menu_list li.menu_box.select .icon.hot {background:url(../images/event_main.png) -100px -530px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.select .icon.new {background:url(../images/event_main.png) -200px -530px no-repeat;}
+
+#main_bg .bg_left .menu_list li.menu_box.focus .bg_menu_img {width:225px; height:220px; float:left; display:inline-block; position:absolute; top:176px; left:0px; border:0px solid #33FF00;}
+#main_bg .bg_left .menu_list li.menu_box.focus .bg_menu_img.menu01 {background:url(../images/event_main.png) -1140px -570px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.focus .bg_menu_img.menu02 {background:url(../images/event_main.png) -1540px -320px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.focus .bg_menu_img.menu03 {background:url(../images/event_main.png) -1540px 0px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.select .bg_menu_img {width:225px; height:220px; float:left; display:inline-block; position:absolute; top:176px; left:0px; border:0px solid #33FF00;}
+#main_bg .bg_left .menu_list li.menu_box.select .bg_menu_img.menu01 {background:url(../images/event_main.png) -1140px -570px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.select .bg_menu_img.menu02 {background:url(../images/event_main.png) -1540px -320px no-repeat;}
+#main_bg .bg_left .menu_list li.menu_box.select .bg_menu_img.menu03 {background:url(../images/event_main.png) -1540px 0px no-repeat;}
+
+#main_bg .bg_right  {width:673px; height:540px; display:inline-block; float:left; position:absolute; left:287px; border:0px solid #FF3366;}
+
+#area_info {display:inline-block; float:left; width:623px; height:24px; line-height:24px; text-align:right; position:absolute; top:45px; left:0px; border:0px solid #FFFF00;}
+#area_info .date {display:inline-block; font-size:16px; color:#2e494e; font-family:"Dinmed";}
+#area_info .day {display:inline-block; font-size:13px; color:#2e494e; margin-top:2px;}
+#area_info .time {display:inline-block; font-size:20px; color:#2e494e; font-weight:bold; font-family:"Dinbol"; margin-left:7px;}
+
+#area_banner_a {width:587px; height:416px; display:inline-block; float:left; position:absolute; top:71px; left:36px; border:0px solid #66CC99;}
+#area_banner_a .bg_list {width:562px; height:416px; display:inline-block; float:left; border:0px solid #FF0033;}
+#area_banner_a .bg_list li {display:inline-block; float:left;}
+#area_banner_a .bg_list li.banner.unfocus {width:562px; height:141px;}
+#area_banner_a .bg_list li.banner.unfocus span.img {width:562px; height:141px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/event_main.png) 0px -380px no-repeat;}
+#area_banner_a .bg_list li.banner.unfocus span.img img {width:562px; height:141px;}
+#area_banner_a .bg_list li.banner.focus {width:562px; height:141px; background:url(../images/event_main.png) 0px -380px no-repeat;}
+#area_banner_a .bg_list li.banner.focus span.img {width:562px; height:141px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/event_main.png) 0px -800px;}
+#area_banner_a .bg_list li.banner.focus span.img img {width:562px; height:141px;}
+#area_banner_a .bg_list li.banner.focus span.underline {width:562px; height:5px; display:inline-block; float:left; position:relative; top:-85px; left:0px; background-color:#cbe816;}
+#area_banner_a .bg_list li.banner span.icon {width:80px; height:80px; display:inline-block; float:left; position:relative; top:-136px; left:500px; z-index:9;}
+
+#area_banner_b {width:587px; height:416px; display:inline-block; float:left; position:absolute; top:71px; left:36px; border:0px solid #66CC99;}
+#area_banner_b .bg_list {width:562px; height:416px; display:inline-block; float:left; border:0px solid #FF0033;}
+#area_banner_b .bg_list li {display:inline-block; float:left;}
+#area_banner_b .bg_list li.banner.unfocus {width:562px; height:105px;}
+#area_banner_b .bg_list li.banner.unfocus span.img {width:562px; height:105px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/event_main.png) 0px -270px no-repeat;}
+#area_banner_b .bg_list li.banner.unfocus span.img img {width:562px; height:105px;}
+#area_banner_b .bg_list li.banner.focus {width:562px; height:105px; background:url(../images/event_main.png) -570px -710px no-repeat;}
+#area_banner_b .bg_list li.banner.focus span.img {width:562px; height:105px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/event_main.png) 0px -800px;}
+#area_banner_b .bg_list li.banner.focus span.img img {width:562px; height:105px;}
+#area_banner_b .bg_list li.banner.focus span.underline {width:562px; height:5px; display:inline-block; float:left; position:relative; top:-85px; left:0px; background-color:#cbe816;}
+#area_banner_b .bg_list li.banner span.icon {width:80px; height:80px; display:inline-block; float:left; position:relative; top:-100px; left:500px; z-index:9;}
+
+#area_banner_c {width:587px; height:416px; display:inline-block; float:left; position:absolute; top:78px; left:36px; border:0px solid #66CC99;}
+#area_banner_c .bg_list {width:562px; height:416px; display:inline-block; float:left; border:0px solid #FF0033;}
+#area_banner_c .bg_list li {display:inline-block; float:left;}
+#area_banner_c .bg_list li.banner.unfocus {width:562px; height:51px;}
+#area_banner_c .bg_list li.banner.unfocus span.img.odd {width:562px; height:51px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/event_main.png) 0px -210px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.img.even {width:562px; height:51px; display:inline-block; float:left;}
+#area_banner_c .bg_list li.banner.unfocus span.img img {width:562px; height:51px;}
+#area_banner_c .bg_list li.banner.unfocus span.text {max-width:460px;  height:51px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:51px; font-size:16px; color:#f1f1f1; margin-left:15px;}
+#area_banner_c .bg_list li.banner.focus {width:562px; height:51px;}
+#area_banner_c .bg_list li.banner.focus span.img {width:562px; height:51px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background-color:#cbe816;}
+#area_banner_c .bg_list li.banner.focus span.img img {width:562px; height:51px;}
+#area_banner_c .bg_list li.banner.focus span.text {max-width:460px;  height:51px; display:inline-block; float:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:51px; font-size:16px; color:#323d42; margin-left:15px;}
+#area_banner_c .bg_list li.banner span.icon {width:45px; height:19px; display:inline-block; float:left; position:relative; top:-36px; left:489px; z-index:9;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.win {background:url(../images/event_main.png) -480px -530px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.end {background:url(../images/event_main.png) 0px -530px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.join {background:url(../images/event_main.png) -1170px -550px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.enter {background:url(../images/event_main.png) -1720px -270px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.nowin {background:url(../images/event_main.png) -1720px -290px no-repeat;}
+#area_banner_c .bg_list li.banner.unfocus span.icon.notify {background:url(../images/event_main.png) -480px -550px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.win {background:url(../images/event_main.png) -1270px -550px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.end {background:url(../images/event_main.png) -50px -530px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.join {background:url(../images/event_main.png) -1220px -550px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.enter {background:url(../images/event_main.png) -1370px -550px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.nowin {background:url(../images/event_main.png) -300px -530px no-repeat;}
+#area_banner_c .bg_list li.banner.focus span.icon.notify {background:url(../images/event_main.png) -530px -550px no-repeat;}
+#area_banner_c .bg_list li.layout_bottom {width:562px; height:2px; display:inline-block; float:left; background:url(../images/event_main.png) -570px -820px no-repeat;}
+
+#bg_scroll {width:3px; height:416px; display:inline-block; float:right; position:absolute; top:78px; right:50px;}
+#bg_scroll span.line_src {width:1px; height:416px; display:inline-block; float:right; background-color:rgba(46,73,78,0.3);}
+#bg_scroll span.scroll_bar {width:3px; max-height:416px; min-height:1px; display:inline-block; float:right; position:relative; top:-416px; right:0px; background-color:#2e494e;}
+
+/*공통 */
+.win {background:url(../images/event_main.png) -390px -530px no-repeat;}
+.join {background:url(../images/event_main.png) -1630px -230px no-repeat;}
+.enter {background:url(../images/event_main.png) -1540px -230px no-repeat;}
+.end {background:url(../images/event_main.png) -300px -550px no-repeat;}
+.notify {background:url(../images/event_main.png) -1650px -550px no-repeat;}
+
+
+

@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import url('base.css');
+
+body {font-size:12px; font-family:"산세리프2"; color:#6f6f6f; line-height:15px; width:960px; height:540px; overflow : hidden;}
+input, select, textarea, table, tr, td, div, span {vertical-align:middle; font-size:12px; font-family:"산세리프2"; color:#6f6f6f;}
+a {cursor:pointer;}
+
+/*detail */
+#detail {width:960px; height:540px; margin:0; z-index:20;}
+#detail .bg_iframe{width:960px; height:540px; float:left; display:inline-block;}
+
+#detail .bg_info{width:960px; height:78px; display:inline-block; position:relative; top:-260px; left:0px;}
+#detail .bg_info .left.btn {width:650px; height:78px; float:left; position:absolute; left:61px; display:inline-block;}
+#detail .bg_info .left.btn .title {width:650px;  height:24px; line-height:24px; float:left; display:inline-block; text-align:left; font-size:20px; color:#f0f0f0; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;margin:10px 0 5px 0;}
+#detail .bg_info .left.btn .body {width:650px; height:39px; float:left; display:inline-block; text-align:left; font-size:15px; color:#ccd2a3; word-break:break-all; line-height:18px;}
+
+#detail .bg_info .left.nobtn {width:840px; height:78px; float:left; position:absolute; left:61px; display:inline-block; border:0px solid #CCFF66;}
+#detail .bg_info .left.nobtn .title {width:840px; height:24px; line-height:24px; float:left; display:inline-block; text-align:left; font-size:20px; color:#f0f0f0; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; margin:10px 0 5px 0;}
+#detail .bg_info .left.nobtn .body {width:840px; height:39px;  float:left; display:inline-block; text-align:left; font-size:15px; color:#ccd2a3; word-break:break-all; line-height:18px;}
+
+#detail .bg_info .right {width:158px; height:48px; padding-top:30px; float:left; position:absolute; left:762px; display:inline-block;}
+
+#detail .area_event_option {width:900px; height:82px; display:inline-block; text-align:center; position:relative; top:-263px; left:30px;}
+#detail .area_coin_left {width:184px; height:52px; display:inline-block; position:absolute; top:14px; left:112px;}
+#detail .area_coin_left .icon_coin {width:52px; height:52px; display:inline-block; float:left; background:url(../images/event_main.png) 0 -550px no-repeat;}
+#detail .area_coin_left .goal_text {width:115px; height:52px; float:left; display:inline-block; text-align:left; font-size:20px; color:#a9d9e1; margin-left:7px; line-height:52px; letter-spacing:-2px;}
+
+#detail .area_coin_right {width:515px; height:80px; display:inline-block; position:absolute; top:-14px; left:300px; background:url(../images/event_main.png) -480px -610px no-repeat;}
+#detail .area_coin_right .bar {width:6px; height:39px; display:inline-block; float:left; position:relative; left:94px; top:37px; background:url(../images/event_main.png) -1720px -230px no-repeat;}
+#detail .area_coin_right .bar_end {width:83px; height:76px; display:inline-block; float:left; position:relative; left:73px; top:0; background:url(../images/event_main.png) -1050px -550px no-repeat;}
+#detail .area_coin_right .price {width:77px; height:24px; line-height:24px;  display:inline-block; text-align:center; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; position:relative; top:0px; left:0px;}
+#detail .area_coin_right .price span.num {width:55px; height:24px; line-height:24px; font-size:16px; color:#f0f0f0; font-family:"Dinmed";}
+#detail .area_coin_right .price span.kr {width:15px; height:24px; line-height:24px; font-size:15px; color:#f0f0f0; font-family:"산세리프2";}  
+#detail .area_coin_right .bg_text_left {width:65px; height:42px; display:inline-block; float:left; position:absolute; left:0px; top:33px;}
+#detail .area_coin_right .bg_text_right {width:65px; height:42px; display:inline-block; float:left; position:absolute; left:445px;  top:33px;}
+#detail .area_coin_right .num {width:50px; height:42px; display:inline-block; float:left; line-height:42px; text-align:right; font-size:16px; color:#f0f0f0; font-family:"Dinmed";}
+#detail .area_coin_right .kr {width:15px; height:42px; display:inline-block; float:left; line-height:43px; text-align:right; font-size:15px; color:#f0f0f0; font-family:"산세리프2";}  
+
+#detail .area_stamp_left {width:189px; height:52px; display:inline-block; position:relative; top:8px; left:0;}
+#detail .area_stamp_left .icon_stamp {width:52px; height:52px; display:inline-block; float:left; background:url(../images/event_main.png) -990px -550px no-repeat;}
+#detail .area_stamp_left .goal_text {width:120px; height:52px; display:inline-block; float:left; text-align:left; font-size:20px; color:#a9d9e1; margin-left:7px; line-height:52px; letter-spacing:-2px;}
+#detail .area_stamp_right01 {min-width:126px; max-width:630px; height:63px; display:inline-block; position:relative; top:13px; left:0; }
+#detail .area_stamp_right01 .bg_stamp {width:63px; height:59px; display:inline-block; float:left; background:url(../images/event_main.png) -850px -550px no-repeat;}
+#detail .area_stamp_right01 .bg_stamp.focus {width:63px; height:59px; display:inline-block; float:left; background:url(../images/event_main.png) -920px -550px no-repeat;}
+#detail .area_stamp_right02 {width:auto; height:63px; line-height:63px; display:inline-block; position:relative; top:13px; left:0;}
+#detail .area_stamp_right02 .page.on {text-align:right; font-size:20px; color:#c0dc00; font-family:"Dinreg"; letter-spacing:-2px;}
+#detail .area_stamp_right02 .page.basic {text-align:left; font-size:20px; color:#d4d4d4; font-family:"Dinreg"; letter-spacing:-2px;}
+
+#detail .area_btn {width:960px; height:34px; display:inline-block; position:relative; top:-229px; left:0px; text-align:center; border:0px solid #FF9966;}
+
+/*공통*/
+.btn.unfocus {width:140px; height:34px; display:inline-block; background-color:#47494a; color:#909293; font-size:16px; line-height:34px; text-align:center;}
+.btn.focus {width:140px; height:34px; display:inline-block; background-color:#c0dc00; color:#121210; font-size:16px; line-height:34px; text-align:center;}
+.btn.inactive {width:140px; height:34px; display:inline-block; background-color:rgba(71,73,74,0.5); color:#7a9094; font-size:16px; line-height:34px; text-align:center;}

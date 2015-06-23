@@ -1,0 +1,39 @@
+    <div id="popup_list_4">
+        <div class="bg_white"><!-- bg상단 시작-->
+            <div class="title"><span class="icon info"></span>알림</div>
+            <div class="subtext">
+                <p class="sub01">다음 이벤트에 참여가능 합니다</p>
+                <p class="sub02">아래 참여 가능한 이벤트를 선택하면 이벤트 참여 페이지로 이동됩니다</p>
+            </div>
+            <div class="table"><!-- 리스트 시작-->
+                <div class="tb_title">
+                    <li class="name">이벤트제목</li><li class="state">상태</li>
+                </div>
+                <div class="list_margin"><!--타이들 제외한 리스트 시작-->
+
+                </div><!--타이들 제외한 리스트 끝-->
+            </div><!-- 리스트 끝-->
+
+            <div class="page">
+                <span class="arr_left"></span>
+                <span class="now"><%=model.getCurrentPageIndex() + 1%></span>
+                <span class="slash"></span>
+                <span class="all"><%=model.getTotalPage()%></span>
+                <span class="arr_right"></span>
+            </div>
+
+        </div><!-- bg상단 끝-->
+        <div class="bg_black"><!-- bg하단(버튼) 시작-->
+
+                <%
+                var buttonSize = model.getButtonGroup().getSize()
+                if(buttonSize > 0) {
+                for(var i = 0; i < buttonSize; i++) {
+                %>
+            <span class="btn unfocus"> <%= model.getButtonGroup().getButton(i).getLabel() %></span>
+                <%      }
+                }
+                %>
+            </span>
+        </div><!-- bg하단(버튼) 끝-->
+    </div>

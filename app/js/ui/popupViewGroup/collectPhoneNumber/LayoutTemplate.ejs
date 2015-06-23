@@ -1,0 +1,40 @@
+<div id="popup_phone_2">
+    <div class="bg_white"><!-- bg상단 시작-->
+        <div class="title"><span class="icon warning"></span><%= model.getTitle() %></div>
+        <div class="tx_1"><%= model.getDescriptionText() %></div>
+        <%
+            var inputFieldList = model.getInputFieldList();
+        %>
+        <div class="phonenum">
+            <div class="passwordbox unfocus">
+                <span>
+                    <%= inputFieldList[0].getInputTextForDraw() %>
+                </span>
+            </div>
+            <div class="passwordbox unfocus">
+                <span>
+                    <%= inputFieldList[1].getInputTextForDraw() %>
+                </span>
+            </div>
+            <div class="passwordbox unfocus">
+                <span>
+                    <%= inputFieldList[2].getInputTextForDraw() %>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- bg상단 끝-->
+    <div class="bg_black"><!-- bg하단(버튼) 시작-->
+        <%
+            var buttonSize = model.getButtonGroup().getSize();
+            if(buttonSize > 0) {
+                for(var i = 0; i < buttonSize; i++) {
+        %>
+                    <span class="btn focus"><%= model.getButtonGroup().getButton(i).getLabel() %></span>
+        <%
+                }
+            }
+        %>
+    </div>
+    <!-- bg하단(버튼) 끝-->
+</div>

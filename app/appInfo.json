@@ -1,0 +1,16 @@
+{
+    "Version": "0.1.0",
+    "QRVersion": "QR6",
+    "DevelopmentMode": "on",
+    "HAS": {
+        "IP": "10.9.50.6",
+        "PORT": "8080"
+    },
+    "EventServer": {
+      "IP": "10.9.50.6",
+      "PORT": "8080"
+    },
+    "CategoryKeyBlockTime":500,
+    "UseBlockToEnterKeyRepetition":"off",
+    "RepetitionEnterKeyBlockTime":500
+}

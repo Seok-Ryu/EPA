@@ -1,0 +1,37 @@
+<div id="popup_phone_1">
+    <div class="bg_white"><!-- bg상단 시작-->
+        <div class="title"><span class="icon info"></span><%= model.getTitle()%></div>
+        <pre class="tx_3">
+1. 개인정보 수집, 이용 목적
+ 헬로tv 이벤트 당첨시 고객고지 및 경품 배송
+2. 수집하는 개인정보 항목
+ 성명, 휴대번호(연락번호), 주소
+3. 개인정보 이용 및 보유기간
+ 가. 이용기간 : 이벤트 응모시점~ 경품배송완료 시점
+ 나. 보유기간 : 이벤트 종료 후 3개월(배송 수령 등의 확인 목적)
+  ※귀하는 위와 관련한 동의를 거부할 권리가 있으나, 개인정보 수집에 동의하지 않는 경우 본 이벤트에 참여하실 수 없습니다.
+4. 개인정보 위탁 업무 및 취급위탁 업체
+ 경품 배송 및 발송, 당첨안내 위탁 업무
+ ㈜YES24, ㈜프리미엄패스인터내셔널, ㈜케이블 TV VOD, ㈜씨맥스커뮤니케이션즈, ㈜엠앤씨넷미디어,㈜스카이라이프티브이, ㈜코빈커뮤니케이션즈, ㈜미디어포럼, 씨제이이앤엠㈜
+        </pre>
+        <div class="scroll">
+            <div class="bar"></div>
+        </div>
+        <div class="tx_4"><%= model.getHeadDescriptionText()%></div>
+        <div class="tx_4_2"><%= model.getBottomDescriptionText()%></div>
+    </div>
+    <!-- bg상단 끝-->
+    <div class="bg_black"><!-- bg하단(버튼) 시작-->
+        <%
+            var buttonSize = model.getButtonGroup().getSize();
+            if(buttonSize > 0) {
+                for(var i = 0; i < buttonSize; i++) {
+        %>
+                    <span class="btn focus"><%= model.getButtonGroup().getButton(i).getLabel() %></span>
+        <%
+                 }
+             }
+        %>
+    </div>
+    <!-- bg하단(버튼) 끝-->
+</div>

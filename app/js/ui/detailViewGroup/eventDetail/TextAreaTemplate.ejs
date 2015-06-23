@@ -1,0 +1,27 @@
+<%
+
+    var hasButtonClassName, titleText, subText, textFieldButtonLabel = "";
+
+    if(model.getEventStatusValue()) {
+        hasButtonClassName =  model.getEventStatusValue().hasButtonOnTextField ? "btn" : "nobtn";
+        titleText = model.getEventStatusValue().textFieldTitle;
+        subText = model.getEventStatusValue().textFieldSubTitle;
+        textFieldButtonLabel = model.getEventStatusValue().textFieldButtonLabel;
+        if(TotalEventStateManager.isNeedShowDrawTime()) {
+            subText =  DateHelper.addDateStringCommas(TotalEventStateManager.getDrawReservationTime()) + subText;
+        } else if(TotalEventStateManager.isNeedShowCouponTitle()) {
+            titleText += TotalEventStateManager.getCouponTitle();
+        } else if(TotalEventStateManager.isNeedShowPrizeTitle()) {
+            titleText += TotalEventStateManager.getPrizeTitle() + " 당첨";
+        }
+    }
+
+
+%>
+<span class="left <%= hasButtonClassName %>"><!-- 텍스트영역의 확장옵션입니다. 우측 버튼 없을 때:nobtn, 버튼 있을 때:btn 입력-->
+    <div class="title"><%= titleText%></div>
+    <div class="body"><%= subText%></div>
+</span>
+<span class="right"><!-- 윗영역(span class="left nobtn")일때, 히든(hidden) 처리되어야함-->
+    <div class="btn unfocus"><%= textFieldButtonLabel%></div><!--unfocus/ focus 중 택일-->
+</span>

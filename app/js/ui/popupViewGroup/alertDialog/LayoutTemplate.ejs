@@ -1,0 +1,33 @@
+<%
+    var popupValue = model.getPopupValue();
+    var iconType = popupValue.iconType;;
+    var titleText = popupValue.title;
+    var subTitleText = popupValue.subTitle;
+    var message = popupValue.message;
+    var subMessage = popupValue.subMessage;
+    var buttonGroup = model.getButtonGroup();
+%>
+
+<div> <!--  전체 프레임 시작 -->
+    <div id="popup_5">
+        <div class="bg_white"><!-- bg상단 시작-->
+            <div class="title"><span class="icon <%= iconType%>"></span><%= titleText%></div>
+            <div class="body">
+                <div class="tx_1"><%= message%></div>
+                <div class="tx_2"><%= subMessage%></div>
+            </div>
+        </div><!-- bg상단 끝-->
+        <div class="bg_black"><!-- bg하단(버튼) 시작-->
+            <%
+                var buttonSize = buttonGroup.getSize();
+                if(buttonSize > 0) {
+                    for (var i = 0; i < buttonSize; i++) {
+                    %>
+                        <span class="btn unfocus"> <%= buttonGroup.getButton(i).getLabel() %></span>
+                    <%
+                    }
+                }
+            %>
+        </div><!-- bg하단(버튼) 끝-->
+    </div>
+</div><!-- // 전체 프레임 끝 -->

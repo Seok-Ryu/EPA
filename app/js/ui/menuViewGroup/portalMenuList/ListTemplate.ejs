@@ -1,0 +1,20 @@
+<%
+    var portalMenuList = model.getData();
+    var max = model.getVMax();
+
+    for(var i = 0; i < max; i++) {
+        var portalMenuName = "";
+        var menuImageClassName = "";
+        var index = i + model.getVStartIndex();
+        if (portalMenuList != null && portalMenuList[index] != null) {
+            portalMenuName = portalMenuList[index].getName();
+        }
+        menuImageClassName = "menu0" + (i + 1);
+%>
+        <li class="menu_box unfocus">
+            <span class="blit"></span>
+            <span class="menu"><%= portalMenuName %></span>
+            <span class="icon"></span>
+            <div class="bg_menu_img <%= menuImageClassName%> "></div>
+        </li>
+<% } %>

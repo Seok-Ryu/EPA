@@ -1,0 +1,56 @@
+<%
+
+var currentPage = model.getCurrentPageIndex() + 1;
+var totalPage = model.getTotalPage();
+var vMax = model.getVisibleVMax();
+
+
+function getMax() {
+    var currentPageEventNum;
+
+    if (totalPage > 1){
+        if (relatedEventList.length % vMax == 0){
+            currentPageEventNum = vMax;
+        } else {
+            if (currentPage == totalPage){
+                currentPageEventNum = relatedEventList.length % vMax;
+            } else{
+                currentPageEventNum = vMax;
+            }
+        }
+    } else {
+        currentPageEventNum = relatedEventList.length;
+    }
+
+    return currentPageEventNum;
+}
+
+var relatedEventList = model.getData();
+
+var max = getMax();
+
+for(var i = 0; i < max ; i++) {
+
+    var index = model.getVStartIndex() + i;
+    var title = "";
+    var status = "";
+
+
+    if (relatedEventList != null && relatedEventList[index] != null) {
+        title = relatedEventList[index].getTitle();
+        if (relatedEventList[index].getEnrollStatus() == EnrollStatusType.FINISHED_ENROLL){
+            status = window.EPABase.StringSources.enrolledEvent; //참여 완료
+        } else {
+            status = window.EPABase.StringSources.availableEventToEnroll;
+        }
+    }
+%>
+
+    <div class="tb_list unfocus">
+        <li class="name"><%= title  %></li>
+        <li class="state"><%= status %></li>
+    </div>
+
+
+
+<% } %>

@@ -1,0 +1,10 @@
+<%
+    var buttonSize = model.getButtonGroup().getSize();
+    if(buttonSize > 0) {
+        for(var i = 0; i < buttonSize; i++) {
+%>
+            <span class="btn unfocus"><%= model.getButtonGroup().getButton(i).getLabel() %></span>
+<%
+        }
+    }
+%>

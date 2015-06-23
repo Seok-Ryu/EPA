@@ -1,0 +1,24 @@
+<%
+
+var availableItemListToEnroll = model.getData();
+
+for(var i = 0; i < availableItemListToEnroll.length ; i++) {
+
+    var title = "";
+    var price =  "";
+
+    if (availableItemListToEnroll != null && availableItemListToEnroll[i] != null) {
+        title = availableItemListToEnroll[i].getTitle();
+        price =  UIHelper.addThousandSeparatorCommas(availableItemListToEnroll[i].getPrice());
+    }
+
+%>
+
+    <div class="tb_list unfocus">
+        <li class="name"><%= title%></li>
+        <li class="price"><%= price %> <em>원</em></li>
+    </div>
+
+
+
+<% } %>

@@ -1,0 +1,25 @@
+<div id="popup_phone_2">
+    <div class="bg_white"><!-- bg상단 시작-->
+        <div class="title"><span class="icon warning"></span><%= model.getTitle() %></div>
+        <div class="tx_2"><%= model.getHeadDescriptionText() %></div>
+
+        <div class="phonenum2"><%= UIHelper.hyphenPhoneNumber(model.getPhoneNumber())%></div>
+
+        <div class="tx_3"><%= model.getBottomDescriptionText() %></div>
+    </div>
+    <!-- bg상단 끝-->
+
+    <div class="bg_black"><!-- bg하단(버튼) 시작-->
+        <%
+            var buttonSize = model.getButtonGroup().getSize();
+            if(buttonSize > 0) {
+                for(var i = 0; i < buttonSize; i++) {
+        %>
+                    <span class="btn_small focus"><%= model.getButtonGroup().getButton(i).getLabel() %></span>
+        <%
+                }
+            }
+        %>
+    </div>
+    <!-- bg하단(버튼) 끝-->
+</div>

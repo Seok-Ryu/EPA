@@ -1,0 +1,26 @@
+<ul class="bg_list">
+
+    <%
+    var eventList = model.getData();
+    var max = model.getVVisibleSize();
+
+    for(var i = 0; i < max; i++) {
+        var index = i + model.getVStartIndex();
+        var event = null;
+        var eventTitle = "";
+        var eventStateClassName = "";
+        if (eventList != null && eventList[index] != null) {
+            event = eventList[index];
+            eventTitle = event.getTitle();
+            eventStateClassName = UIHelper.getEventStateClassName(event);
+        }
+
+        var listBGClassName = (i % 2 == 0) ? "odd" : "even";
+    %>
+        <li class="banner unfocus">
+            <span class="img <%= listBGClassName%> " ><span class="text"><%= eventTitle%></span></span>
+            <span class="icon <%= eventStateClassName%> "></span><!-- 응모완료:enter, 참여중:join, 종료:end, 당첨:win, 미당첨:nowin 중 택일-->
+        </li>
+    <% } %>
+    <li class="layout_bottom"></li>
+</ul>

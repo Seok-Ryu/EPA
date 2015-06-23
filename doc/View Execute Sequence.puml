@@ -1,0 +1,48 @@
+@startuml
+title View Execute Sequence
+
+participant Service
+participant ViewGroup
+participant SomethingViewGroup
+participant View
+participant SomethingView
+participant Drawer
+participant SomethingDrawer
+participant Model
+participant SomethingModel
+
+
+Service -> SomethingViewGroup : SomethingViewGroup.start()
+activate Service
+
+SomethingViewGroup -> ViewGroup : super.start()
+ViewGroup -> SomethingViewGroup : this.onStart()
+
+SomethingViewGroup -> SomethingView : SomethingView.start()
+SomethingView -> View : super.start()
+
+View -> SomethingModel : SomethingModel.initialize()
+SomethingModel -> Model : super.initialize()
+
+View -> SomethingView : SomethingView.onStart()
+View -> SomethingView : SomethingView.onRequestData()
+
+SomethingView -> Server : reqeust data To Server
+Server --> SomethingView : response data From Server
+
+SomethingView -> SomethingModel : save necessary data
+SomethingView -> View : super.startDrawer()
+
+View -> SomethingDrawer : SomethingDrawer.start()
+SomethingDrawer -> Drawer : super.start()
+
+Drawer -> Drawer : this.initialize()
+Drawer -> SomethingDrawer : SomethingDrawer.onCreateLayout()
+Drawer -> SomethingDrawer : SomethingDrawer.onPaint()
+Drawer -> SomethingDrawer : SomethingDrawer.onAfterPaint()
+
+
+deactivate Service
+
+
+@enduml

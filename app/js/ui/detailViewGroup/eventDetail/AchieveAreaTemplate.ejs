@@ -1,0 +1,71 @@
+<%
+    if(TotalEventStateManager.isNeedShowAchieve()) {
+        if(TotalEventStateManager.isStampEvent() || TotalEventStateManager.isBonusContentEvent()) {
+            var achieveCount = TotalEventStateManager.getEnrollCompleteCount();
+            var currentCount = TotalEventStateManager.getTotalEnrollCount();
+            if(currentCount >= achieveCount) {
+                currentCount = achieveCount;
+            }
+%>
+            <div class="area_stamp_left">
+                <span class="icon_stamp"></span>
+                <span class="goal_text">목표달성 스탬프</span>
+            </div>
+            <div class="area_stamp_right01"><!--스템프 최소~최대 갯수:2~10개-->
+<%
+            for(var i = 0; i < achieveCount; i++) {
+                var stampFocusClassName = currentCount > i ? "focus" : "";
+%>
+                <span class="bg_stamp <%= stampFocusClassName%>"></span>
+<%
+            }
+ %>
+            </div>
+            <div class="area_stamp_right02">
+                <span class="page on"><%= currentCount%></span>
+                <span class="page basic">/<%= achieveCount%></span>
+            </div>
+
+<%
+        } else if(TotalEventStateManager.isPayBackEvent()) {
+            var achieveAmount = TotalEventStateManager.getEnrollCompletePrice();
+            var currentAmount = TotalEventStateManager.getTotalEnrollPrice();
+            if(currentAmount >= achieveAmount) {
+                currentAmount = achieveAmount;
+            }
+            var increaseRate = achieveAmount / 50;
+%>
+            <div class="area_coin_left">
+                <span class="icon_coin"></span>
+                <span class="goal_text">목표달성 금액</span>
+            </div>
+            <div class="area_coin_right">
+                <div class="bg_text_left">
+                    <span class="num">0</span>
+                    <span class="kr">원</span>
+                </div>
+                <div style="">
+<%
+                    for(var i = 0, max = currentAmount / increaseRate; i < max; i++) {
+%>
+                        <span class="bar"></span> <!--최대 갯수:50개-->
+<%
+                    }
+%>
+                    <span class="bar_end"><!--bar_end 시작, bar 이미지 마지막에 항상 붙어야함-->
+                        <span class="price">
+                            <span class="num"><%= UIHelper.addThousandSeparatorCommas(currentAmount)%></span>
+                            <span class="kr">원</span>
+                        </span>
+                    </span> <!--//bar_end 끝-->
+                </div>
+                <div class="bg_text_right">
+                    <span class="num"><%= UIHelper.addThousandSeparatorCommas(achieveAmount)%></span>
+                    <span class="kr">원</span>
+                </div>
+            </div>
+<%
+        }
+
+    }
+%>

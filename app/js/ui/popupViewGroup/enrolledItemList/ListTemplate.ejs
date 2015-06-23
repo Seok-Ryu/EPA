@@ -1,0 +1,77 @@
+<div class="title">이벤트 참여내역</div>
+<div class="table"><!-- 리스트 시작-->
+    <div class="tb_title">
+        <li class="number">번호</li>
+        <li class="name">콘텐츠 명</li>
+        <li class="price">가격</li>
+        <li class="date">날짜</li>
+    </div>
+    <div class="list_margin"><!--타이들 제외한 리스트 시작-->
+<%
+    var subscriberEnrollList = model.getData();
+    var totalPage = model.getTotalPage();
+    var currentPage = model.getCurrentPageIndex() + 1;
+    var vMax = model.getVisibleVMax();
+
+    var max = getMax();
+
+    function getMax() {
+        var currentPageEventNum;
+
+        if (totalPage > 1){
+
+            if (subscriberEnrollList.length % vMax == 0){
+                currentPageEventNum = vMax;
+            } else {
+                if (currentPage == totalPage){
+                    currentPageEventNum = subscriberEnrollList.length % vMax;
+                } else{
+                    currentPageEventNum = vMax;
+                }
+            }
+        } else {
+            currentPageEventNum = subscriberEnrollList.length;
+        }
+
+        return currentPageEventNum;
+    }
+
+
+    for(var i = 0; i < max; i++) {
+        var index = model.getVStartIndex() + i;
+        var number = "";
+        var targetName = "";
+        var price = "";
+        var date = "";
+
+
+        if (subscriberEnrollList != null && subscriberEnrollList[index] != null) {
+
+            number = index + 1;
+            targetName = subscriberEnrollList[index].getTargetName();
+            price = UIHelper.addThousandSeparatorCommas(subscriberEnrollList[index].getPrice());
+            date =  DateHelper.addDateStringCommas(subscriberEnrollList[index].getEnrollTime());
+
+        }
+
+%>
+
+        <div class="tb_list">
+            <li class="number"><%= number %></li>
+            <li class="name"><%= targetName %></li>
+            <li class="price"><%= price %> <em>원</em></li>
+            <li class="date"><%= date %></li>
+        </div>
+<%
+    }
+%>
+    </div>
+    <!-- 리스트 끝-->
+</div>
+<div class="page">
+    <span class="arr_left"></span>
+    <span class="now"><%= currentPage %></span>
+    <span class="slash"></span>
+    <span class="all"><%= totalPage %></span>
+    <span class="arr_right"></span>
+</div>

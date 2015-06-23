@@ -1,0 +1,24 @@
+<ul class="bg_list">
+
+    <%
+    var list = model.getData();
+    var max = model.getVVisibleSize();
+
+    for(var i = 0; i < max; i++) {
+        var index = i + model.getVStartIndex();
+        var asset = null;
+        var assetTitle = "";
+        if (list != null && list[index] != null) {
+            asset = list[index];
+            assetTitle = asset.title;
+        }
+
+        var listBGClassName = (i % 2 == 0) ? "odd" : "even";
+    %>
+        <li class="banner unfocus">
+            <span class="img <%= listBGClassName%> " ><span class="text"><%= assetTitle%></span></span>
+            <span class="icon"></span><!-- 응모완료:enter, 참여중:join, 종료:end, 당첨:win, 미당첨:nowin 중 택일-->
+        </li>
+    <% } %>
+    <li class="layout_bottom"></li>
+</ul>

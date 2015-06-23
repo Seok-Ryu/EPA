@@ -1,0 +1,57 @@
+<div class="title">당첨자 목록</div>
+<div class="subtext">
+    <p class="sub01">EVENT 당첨자 발표!</p>
+
+    <p class="sub02">자세한 내용은 홈페이지 확인 또는 고객센터로 연락 주시기 바랍니다</br> www.hellovision.com / 고객센터 1588-5588</p>
+</div>
+<div class="table"><!-- 리스트 시작-->
+    <div class="tb_title">
+        <li class="number">등수</li>
+        <li class="name">이름</li>
+        <li class="phone">휴대폰 번호</li>
+        <li class="product">상품</li>
+    </div>
+    <div class="list_margin"><!--타이들 제외한 리스트 시작-->
+
+<%
+
+    var winnerList = model.getData();
+    var totalPage = model.getTotalPage();
+    var currentPageIndex = model.getCurrentPageIndex() + 1;
+
+    for (var i = 0; i < winnerList.length; i++) {
+
+
+        var number = "";
+        var name = "";
+        var phone = "";
+        var prize = "";
+
+        if (winnerList != null && winnerList[i] != null) {
+            number = model.getVStartIndex() + i + 1;
+            name = winnerList[i].getName();
+            phone = winnerList[i].getPhone();
+            prize = winnerList[i].getPrize();
+        }
+
+%>
+        <div class="tb_list">
+            <li class="number"><%= number %></li>
+            <li class="name"><%= name %></li>
+            <li class="phone"><%= phone %></li>
+            <li class="product"><%= prize %></li>
+        </div>
+<%
+    }
+%>
+    </div>
+    <!--타이들 제외한 리스트 끝-->
+</div>
+<!-- 리스트 끝-->
+<div class="page">
+    <span class="arr_left"></span>
+    <span class="now"><%= currentPageIndex %></span>
+    <span class="slash"></span>
+    <span class="all"><%= totalPage %></span>
+    <span class="arr_right"></span>
+</div>
